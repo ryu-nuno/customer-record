@@ -20,7 +20,7 @@
 各顧客ごとに閲覧できる。
 
 ## 設計書
-
+作成中
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1QjwP1c-psNwQb3Gnlr5g6Yr6gkIGFQpyy3DKUroShcA/edit#gid=0
@@ -30,7 +30,9 @@ https://docs.google.com/spreadsheets/d/1QjwP1c-psNwQb3Gnlr5g6Yr6gkIGFQpyy3DKUroS
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
-- IDE：Cloud9
+- IDE：
+- Gem：devise
+- CSSフレームワーク：BootStrap
 
 ## 使用素材
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
