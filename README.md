@@ -1,24 +1,37 @@
-# README
+# <スタレコ（customer record）>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+営業の行動履歴を残していく顧客管理サイト（CRM）
 
-Things you may want to cover:
+### サイトテーマ
+中小企業向けの簡易顧客管理サービス
 
-* Ruby version
+### テーマを選んだ理由
+各企業の営業の顧客管理などが各個人に依存している企業様が多々ある
+印象だったので、各中小企業が取り入れやすいような業務管理サイトなどがあれば
+企業全体で顧客との進捗状況が確認でき、業務お効率化ができると考えたため。
 
-* System dependencies
+### ターゲットユーザ
+地方の中小企業で主に営業向け
 
-* Configuration
+### 主な利用シーン
+営業が顧客と接触した際に、履歴を残して管理しやすくする。
+その顧客との関係性や、取引の状況などを時系列で確認できるようにする。
+各顧客ごとに閲覧できる。
 
-* Database creation
+## 設計書
 
-* Database initialization
 
-* How to run the test suite
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1QjwP1c-psNwQb3Gnlr5g6Yr6gkIGFQpyy3DKUroShcA/edit#gid=0
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除し
