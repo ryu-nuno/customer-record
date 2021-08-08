@@ -1,0 +1,49 @@
+<main>
+  <div class="container">
+    <h3>顧客一覧</h3>
+    <div class="text-right index-new" style ="margin-bottom:20;">
+    <%= link_to new_customer_path do %>
+      <button type="button" class="btn btn-circle btn-lg">＋</button>
+    <% end %>
+  </div>
+    <table class="table">
+      <tr>
+        <td>
+          顧客ID
+        </td>
+        <td>
+          顧客名
+        </td>
+        <td>
+          税抜価格
+        </td>
+        <td>
+          ジャンル
+        </td>
+        <td>
+          ステータス
+        </td>
+      </tr>
+      <%@customers.each do |item|%>
+      <tr>
+        <td>
+          <%=customer.id%>
+        </td>
+        <td>
+          <%=link_to user_customer_path(item.id) do %><%=customer.customer_name%><%end%>
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <%end%>
+    </table>
+    <%#= paginate @customers %>
+  </div>
+</main>

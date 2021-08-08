@@ -1,0 +1,16 @@
+
+
+<h1>投稿フォーム</h1>
+<%= form_with model: @customer, local:true do |f| %>
+  <h4>企業名</h4>
+  <%= f.text_field :customer_name %>
+  <h4>住所</h4>
+  <%= f.text_field :address %>
+  <h4>連絡先</h4>
+  <%= f.text_field :telephone_number %>
+  <h4>担当者</h4>
+  <%= f.text_field :manager %>
+  <h4>メモ</h4>
+  <%= f.text_area :memo %>
+  <%= f.submit '登録' %>
+<% end %>

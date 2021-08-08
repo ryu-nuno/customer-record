@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   #user側
   root to:'user/homes#top'
-  
+  resources :customers, only: [:new, :create, :index, :show, :destroy], to: 'user/customers#'
   
   
   
