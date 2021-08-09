@@ -6,19 +6,24 @@ class User::CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
+    @customer.user_id = current_user.id
     if @customer.save
-      redirect_to user_customer_path(customer)
+      flash[:notice]="You have creatad customer successfully."
+      redirect_to customers_path(@customer)
     else
-      @customer = Customer.new
+      @user = current_user
+      @customers = Customer.all
       render :new
     end
   end
 
   def index
+    @user = current_user
     @customers = Customer.all
   end
 
   def show
+    @customer = Customer.find(params[:id])
   end
 
   def destroy

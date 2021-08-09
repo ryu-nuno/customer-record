@@ -1,0 +1,49 @@
+<main>
+  <div class="container">
+    <h3>顧客詳細</h3>
+    
+    <table class="table table-borderless">
+      <tr>
+        <th>
+          顧客名
+        </th>
+        <td>
+          <%= @customer.customer_name %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          住所
+        </th>
+        <td>
+          <%= @customer.address %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          電話番号
+        </th>
+        <td>
+          <%= @customer.telephone_number %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          担当者
+        </th>
+        <td>
+          <%= @customer.manager %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          メモ
+        </th>
+        <td>
+          <%= @customer.memo%>
+        </td>
+      </tr>
+    </table>
+    <%#= link_to '編集する',edit_admin_item_path, class:"btn btn-success" %>
+  </div>
+</main>
