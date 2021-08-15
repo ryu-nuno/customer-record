@@ -1,5 +1,14 @@
 <main>
   <div class="container">
+
+    <div class="search-form">
+  <%= form_with url: search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, value: @keyword %>
+    <%= f.submit "検索" ,class:"btn-success"%>
+  <% end %>
+    </div>
+
+
     <h3>顧客一覧</h3>
     <div class="text-right index-new" style ="margin-bottom:20;">
     <%= link_to new_customer_path do %>

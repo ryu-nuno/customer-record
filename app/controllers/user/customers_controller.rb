@@ -47,6 +47,11 @@ class User::CustomersController < ApplicationController
     redirect_to customers_path
   end
 
+  def search
+    @customers = Customer.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
 
   private
 
