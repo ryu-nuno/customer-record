@@ -24,9 +24,27 @@ class User::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @history =History.new
+  end
+
+  def edit
+    @customer =Customer.find(params[:id])
+  end
+
+  def update
+    customer = Customer.find(params[:id])
+    if customer.update(customer_params)
+      redirect_to customer_path(customer.id)
+    else
+      @customer = Customer.find(params[:id])
+      render :edit
+    end
   end
 
   def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+    redirect_to customers_path
   end
 
 

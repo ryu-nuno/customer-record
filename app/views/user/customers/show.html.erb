@@ -1,7 +1,6 @@
 <main>
   <div class="container">
     <h3>顧客詳細</h3>
-    
     <table class="table table-borderless">
       <tr>
         <th>
@@ -44,6 +43,27 @@
         </td>
       </tr>
     </table>
-    <%#= link_to '編集する',edit_admin_item_path, class:"btn btn-success" %>
+    <%= link_to '編集する',edit_customer_path, class:"btn btn-success" %>
+    <%= link_to "顧客情報を削除する", customer_path(@customer.id), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %>
+
+    <%#= paginate @customers %>
   </div>
 </main>
+
+<h1>顧客進捗登録</h1>
+<%= form_with model: @history, local: true do |f| %>
+  <h4>接触方法</h4>
+  <%= f.select :action, [["電話", "電話"], ["商談", "商談"]], include_blank: "選択して下さい" %>
+  <h4>結果</h4>
+  <%= f.select :保存先のカラム名, [["話できなかった", "話できなかった"], ["話できた", "話できた"], ["アポ取得", "アポ取得"], ["取引あり", "取引あり"]], include_blank: "選択して下さい" %>
+  <h4>次の行動・メモ</h4>
+  <%= f.text_area :introduction %>
+  <%= f.submit '送信する' %>
+<% end %>
+
+<% @customer.histories.each do |history| %>
+  <p></p>
+  <%= history.action %>
+  <%#= post_comment.created_at.strftime('%Y/%m/%d') %><%= history.result %>
+  <%= history.introduction %>
+<% end %>
