@@ -19,7 +19,7 @@ class User::CustomersController < ApplicationController
 
   def index
     @user = current_user
-    @customers = Customer.all
+    @customers = Customer.all.page(params[:page])
   end
 
   def show

@@ -45,18 +45,19 @@
     </table>
     <%= link_to '編集する',edit_customer_path, class:"btn btn-success" %>
     <%= link_to "顧客情報を削除する", customer_path(@customer.id), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %>
-    <%= link_to '顧客履歴の追加',new_history_path, class:"btn btn-primary" %>
+    <%= link_to '顧客履歴の追加',new_history_path(customer_id: @customer.id), class:"btn btn-primary" %>
 
     <%#= paginate @customers %>
-  </div>
-</main>
 
 
 
 <h3 style="margin-top:20px;">履歴一覧</h3>
-  </div>
+
     <table class="table">
       <tr>
+        <td>
+          投稿日
+        </td>
         <td>
           アクション
         </td>
@@ -66,15 +67,12 @@
         <td>
           次回行動・メモ
         </td>
-        <td>
-
-        </td>
-        <td>
-
-        </td>
       </tr>
       <%@customer.histories.each do |history|%>
       <tr>
+        <td>
+          <%= history.created_at.strftime('%Y/%m/%d') %>
+        </td>
         <td>
           <%= history.action %>
         </td>
@@ -84,9 +82,12 @@
         <td>
           <%= history.caption %>
         </td>
+        <td>
+              <%= link_to "顧客情報を削除する", history_path(history.id), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %>
+        </td>
       </tr>
       <%end%>
     </table>
-    <%#= paginate @customers %>
+    <%#= paginate @historys %>
   </div>
 </main>

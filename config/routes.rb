@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   #user側
   root to:'user/homes#top'
   resources :customers, only: [:new, :create, :index, :show, :destroy, :edit , :update], to: 'user/customers#'
-  resources :histories, only: [:new, :create, :edit, :update], to: 'user/histories#'
+  resources :histories, only: [:new, :create, :edit, :update, :destroy], to: 'user/histories#'
 
-  resources :customers, only: [:edit, :update], to: 'user/users#'
+  resources :users, only: [:edit, :update], to: 'user/users#'
   get '/users/my_page', to:'user/users#show'
 
 
