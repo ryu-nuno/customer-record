@@ -24,7 +24,6 @@ class User::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
-    @history =History.new
   end
 
   def edit

@@ -22,6 +22,10 @@ footer{
   background-color: rgba(100,100,80,0.7);
   width: 100%;
   margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 0;
+
 }
 
 .container-box{
@@ -31,4 +35,37 @@ footer{
 
 .search-form{
   margin: 10px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* フッタと同じ高さに設定 */
+  margin-bottom: 60px;
+
+  /* 一番下までスクロールした時の余白 */
+  padding-bottom: 0;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .main {
+    width: 100%;
+  }
+}
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width: 768px) {
+  .main {
+    width: 100%;
+  }
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .main {
+    width: 100;
+  }
 }

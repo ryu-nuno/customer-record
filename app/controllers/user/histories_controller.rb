@@ -1,5 +1,8 @@
 class User::HistoriesController < ApplicationController
 
+  def new
+    @history =History.new
+  end
 
   def edit
     @history =History.find(params[:id])
@@ -20,11 +23,11 @@ class User::HistoriesController < ApplicationController
     history = current_user.histories.new(history_params)
     history.customer_id = customer.id
     history.save
-    redirect_to customer_path(customer_path)
+    redirect_to customer_path(customer.id)
   end
 
   def customer_params
-    params.require(:history).permit(:action, :result, :introduction)
+    params.require(:history).permit(:id, :user_id, :customer_id, :action, :result, :caption)
   end
 
 end

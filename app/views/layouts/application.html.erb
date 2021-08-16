@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>CustomerRecord</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -26,7 +27,7 @@
                 <%if user_signed_in?%>
                 　<div class="col">
                     <li>
-                      ようこそ、<%#= current_user.first_name%>さん！
+                      ようこそ、<%= current_user.name%>さん！
                     </li>
                   </div>
                   <div class="col my-2">
