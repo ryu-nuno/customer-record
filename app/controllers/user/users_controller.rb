@@ -1,7 +1,7 @@
 class User::UsersController < ApplicationController
 
   def show
-    @user=current_user
+    @user = current_user
   end
 
   def edit
@@ -9,8 +9,8 @@ class User::UsersController < ApplicationController
   end
 
   def update
-    @user=current_user
-    if customer.update(user_params)
+    user = current_user
+    if user.update(user_params)
       redirect_to users_my_page_path
     else
       @user=current_user
